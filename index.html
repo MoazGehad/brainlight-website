@@ -1,174 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrAIn Light – AI Nexus 2025 Finalist</title>
+    <meta name="description"
+        content="BrAIn Light is an AI-powered, AR-enhanced platform from Cairo University, designed to support children with Autism, their parents, and doctors in the MENA region.">
+    <meta name="keywords"
+        content="Autism Support, AI Project, Egypt, Cairo University, FCAI, BrAIn Light, AR, Artificial Intelligence, Autism Care">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&family=Cairo:wght@400;700&display=swap"
+        rel="stylesheet">
+
     <style>
-        /* ==========================================================================
-        CSS Variables & Global Styles
-        - A professional, friendly, and modern color palette.
-        - Base styles for the entire page.
-        ==========================================================================
-        */
         :root {
-            --dark-navy: #0a192f;
-            --navy: #112240;
-            --light-navy: #233554;
-            --slate: #8892b0;
-            --light-slate: #a8b2d1;
-            --lightest-slate: #ccd6f6;
-            --white: #e6f1ff;
-            --blue: #64ffda;
-            /* A modern, friendly teal */
-            --blue-tint: rgba(100, 255, 218, 0.1);
-
-            --font-sans: 'Poppins', sans-serif;
-            --fz-xxl: 2.5rem;
-            --fz-xl: 2rem;
-            --fz-lg: 1.5rem;
-            --fz-md: 1.1rem;
-            --fz-sm: 0.9rem;
-
-            --border-radius: 8px;
-            --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            --bg-color: #FFF9EF;
+            /* Inspired by #ffeecf card color */
+            --primary-blue: #007BFF;
+            --dark-blue: #0056b3;
+            --primary-yellow: #FFC107;
+            --text-dark: #2c3e50;
+            --text-body: #4a5568;
+            /* Darker, more accessible text color */
+            --card-bg: #FFFFFF;
+            --border-light: #e2e8f0;
         }
 
         body {
-            font-family: var(--font-sans);
-            background-color: var(--dark-navy);
-            color: var(--slate);
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-body);
             -webkit-font-smoothing: antialiased;
-        }
-
-        main {
-            padding: 0 5%;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         h1,
         h2,
-        h3 {
-            color: var(--lightest-slate);
-            font-weight: 600;
+        h3,
+        h4,
+        .font-heading {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
         }
 
-        h2 {
-            font-size: var(--fz-xl);
-            margin-bottom: 2rem;
+        [lang="ar"] body,
+        [lang="ar"] button,
+        [lang="ar"] input,
+        [lang="ar"] textarea {
+            font-family: 'Cairo', sans-serif;
         }
 
-        /* ==========================================================================
-        Header & Main App Shell
-        ==========================================================================
-        */
-        .app-header {
-            padding: 2rem 5%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        main {
+            padding-top: 80px;
+            /* Offset for fixed header */
         }
 
-        .logo {
-            font-size: var(--fz-lg);
-            font-weight: 700;
-            color: var(--lightest-slate);
-        }
-
-        .logo span {
-            color: var(--blue);
-        }
-
-        .competition-info {
-            font-size: var(--fz-sm);
-            text-align: right;
-            color: var(--slate);
-        }
-
-        /* ==========================================================================
-        Tab Navigation
-        ==========================================================================
-        */
         .tab-nav {
-            display: flex;
-            overflow-x: auto;
-            border-bottom: 1px solid var(--light-navy);
-            margin-bottom: 2rem;
             -ms-overflow-style: none;
-            /* IE and Edge */
             scrollbar-width: none;
-            /* Firefox */
         }
 
         .tab-nav::-webkit-scrollbar {
             display: none;
-            /* Chrome, Safari, Opera */
-        }
-
-        .tab-link {
-            flex-shrink: 0;
-            padding: 1rem 1.5rem;
-            cursor: pointer;
-            border: none;
-            background: none;
-            color: var(--slate);
-            font-family: var(--font-sans);
-            font-size: var(--fz-md);
-            position: relative;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .tab-link:hover {
-            color: var(--blue);
         }
 
         .tab-link.active {
-            color: var(--blue);
+            color: var(--primary-blue);
+            border-color: var(--primary-blue);
+            font-weight: 600;
         }
 
-        .tab-link.active::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--blue);
-        }
-
-        /* ==========================================================================
-        Tab Content Styling
-        ==========================================================================
-        */
         .tab-content {
             display: none;
-            padding: 1rem 0;
             animation: fadeIn 0.5s ease-in-out;
         }
 
@@ -188,270 +101,143 @@
             }
         }
 
-        /* ==========================================================================
-        Reusable Components (Buttons, Cards)
-        ==========================================================================
-        */
-        .cta-button {
-            display: inline-block;
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: #ffffff;
+            font-weight: 700;
             padding: 0.75rem 1.5rem;
-            border: 1px solid var(--blue);
-            border-radius: var(--border-radius);
-            color: var(--blue);
-            background-color: transparent;
-            text-decoration: none;
-            font-size: var(--fz-sm);
-            transition: var(--transition);
-            margin: 0.5rem;
-            cursor: pointer;
-        }
+            border-radius: 9999px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            transition: all 300ms ease;
 
-        .cta-button:hover {
-            background-color: var(--blue-tint);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
+            .spinner {
+                width: 1rem;
+                height: 1rem;
+                border: 2px solid var(--text-body);
+                border-top-color: var(--primary-blue);
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+            }
 
-        .card {
-            background-color: var(--light-navy);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-        }
+            @keyframes spin {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
-        }
+            .generating-text {
+                color: var(--text-body);
+                font-style: italic;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
 
-        /* ==========================================================================
-        Section-Specific Styles
-        ==========================================================================
-        */
-
-        /* Home Tab */
-        #home h1 {
-            font-size: var(--fz-xxl);
-            margin-bottom: 1rem;
-        }
-
-        #home .slogan {
-            font-size: var(--fz-lg);
-            color: var(--light-slate);
-            margin-bottom: 1rem;
-        }
-
-        #home .status-subtitle {
-            color: var(--blue);
-            font-weight: 500;
-            margin-bottom: 2rem;
-        }
-
-        .journey-section {
-            margin: 3rem 0;
-            text-align: center;
-        }
-
-        .journey-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .journey-step {
-            background: var(--navy);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--light-navy);
-        }
-
-        .journey-step .icon {
-            font-size: 2rem;
-            color: var(--blue);
-            margin-bottom: 0.5rem;
-        }
-
-        .journey-step h3 {
-            color: var(--lightest-slate);
-            font-size: var(--fz-md);
-        }
-
-        .journey-step p {
-            font-size: var(--fz-sm);
-        }
-
-        .summary-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .summary-card {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            text-align: center;
-        }
-
-        .summary-card h3 {
-            font-size: var(--fz-lg);
-            margin-bottom: 1rem;
-            color: var(--lightest-slate);
-        }
-
-        .summary-card h3 i {
-            color: var(--blue);
-            margin-right: 0.5rem;
-        }
-
-        .summary-card p {
-            flex-grow: 1;
-            margin-bottom: 1.5rem;
-        }
-
-        .summary-card .cta-button {
-            width: 100%;
-        }
-
-        /* Demo Tab */
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-            border-radius: var(--border-radius);
-            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
-            margin-bottom: 1rem;
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* Features Tab */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
-        }
-
-        .feature-card .icon {
-            font-size: 2.5rem;
-            color: var(--blue);
-            margin-bottom: 1rem;
-        }
-
-        .feature-card h3 {
-            font-size: var(--fz-md);
-            margin-bottom: 0.5rem;
-        }
-
-        /* Gemini API Demo Styles */
-        .gemini-demo {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--navy);
-        }
-
-        .gemini-demo .demo-button {
-            width: 100%;
-        }
-
-        .chatbot-demo-interface {
-            display: none;
-            margin-top: 1rem;
-        }
-
-        .chatbot-demo-interface .preset-questions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .chatbot-demo-interface .preset-questions button {
-            background: var(--dark-navy);
-            border: 1px solid var(--light-navy);
-            color: var(--light-slate);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .chatbot-demo-interface .preset-questions button:hover {
-            background: var(--navy);
-            color: var(--blue);
-        }
-
-        .chatbot-demo-interface #chatbot-response {
-            background: var(--dark-navy);
-            padding: 1rem;
-            border-radius: var(--border-radius);
-            min-height: 50px;
-            color: var(--lightest-slate);
-        }
-
-        .summary-generator-interface {
-            display: none;
-            margin-top: 1rem;
-            background: var(--dark-navy);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-        }
-
-        .summary-generator-interface .sliders {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .summary-generator-interface .slider-group {
-            display: flex;
+            border-radius: 9999px;
+            transition: transform 300ms ease,
+            background-color 200ms ease;
+            display: inline-flex;
             align-items: center;
-            gap: 1rem;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
-        .summary-generator-interface label {
-            flex-basis: 150px;
-            color: var(--light-slate);
-        }
-
-        .summary-generator-interface input[type="range"] {
-            flex-grow: 1;
-            cursor: pointer;
-        }
-
-        #summary-output {
-            background: var(--navy);
-            padding: 1rem;
-            border-radius: var(--border-radius);
-            color: var(--lightest-slate);
-            border-left: 3px solid var(--blue);
-        }
-
-        .generating-text {
-            color: var(--slate);
-            font-style: italic;
-            display: flex;
+        /* Enhanced interactive secondary button + "hook" accent */
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-blue);
+            border: 1px solid rgba(0, 123, 255, 0.12);
+            padding: 0.6rem 1rem;
+            border-radius: 12px;
+            font-weight: 600;
+            display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            cursor: pointer;
+            transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease;
+            will-change: transform;
+            user-select: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(0, 123, 255, 0.06);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 24px rgba(0, 123, 255, 0.06);
+            border-color: rgba(0, 123, 255, 0.18);
+        }
+
+        .btn-secondary:active {
+            transform: translateY(-1px) scale(0.998);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .btn-secondary:focus {
+            outline: none;
+            box-shadow: 0 0 0 6px rgba(0, 123, 255, 0.08);
+        }
+
+        /* Small "hook" accent — add inside button markup: <span class="hook"></span> */
+        .btn-secondary .hook {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: linear-gradient(180deg, var(--primary-blue), var(--dark-blue));
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.18);
+            display: inline-block;
+            transform-origin: center;
+            transition: transform 260ms cubic-bezier(.2, .9, .3, 1), opacity 200ms;
+        }
+
+        /* playful slide/pulse while hovering */
+        .btn-secondary:hover .hook {
+            animation: btn-hook 850ms cubic-bezier(.2, .9, .3, 1) infinite;
+        }
+
+        /* persistent attention state — add class "hook" on the button to keep accent animating */
+        .btn-secondary.hook .hook {
+            animation: btn-hook 1000ms ease-in-out infinite;
+        }
+
+        /* subtle entrance for recently added buttons */
+        .btn-secondary.reveal {
+            animation: btn-reveal 420ms ease both;
+        }
+
+        @keyframes btn-hook {
+            0% {
+                transform: translateX(0) scale(1);
+            }
+
+            35% {
+                transform: translateX(6px) scale(1.12);
+            }
+
+            60% {
+                transform: translateX(-2px) scale(0.98);
+            }
+
+            100% {
+                transform: translateX(0) scale(1);
+            }
+        }
+
+        @keyframes btn-reveal {
+            from {
+                opacity: 0;
+                transform: translateY(8px) scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
 
         .spinner {
             width: 1rem;
             height: 1rem;
-            border: 2px solid var(--slate);
-            border-top-color: var(--blue);
+            border: 2px solid var(--text-body);
+            border-top-color: var(--primary-blue);
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
@@ -462,505 +248,794 @@
             }
         }
 
-
-        /* Team Tab */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-
-        .team-member {
-            background-color: var(--light-navy);
-            border-radius: var(--border-radius);
-            text-align: center;
-            padding: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .team-member:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
-        }
-
-        .team-member img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 3px solid var(--blue);
-            margin-bottom: 1rem;
-            object-fit: cover;
-        }
-
-        .team-member .role {
-            font-size: var(--fz-sm);
-            color: var(--blue);
-        }
-
-        .team-member .tagline {
-            font-size: var(--fz-sm);
+        .generating-text {
+            color: var(--text-body);
             font-style: italic;
-            margin-top: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        /* Contact Tab */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
+        /* Floating Puzzle Animation */
+        .hero-bg {
+            position: relative;
+            overflow: hidden;
         }
 
-        .contact-info a {
-            color: var(--light-slate);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .contact-info a:hover {
-            color: var(--blue);
-        }
-
-        .social-icons a {
-            font-size: 1.5rem;
-            margin-right: 1rem;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 0.75rem;
-            background: var(--dark-navy);
-            border: 1px solid var(--light-navy);
-            border-radius: var(--border-radius);
-            color: var(--lightest-slate);
-            font-family: var(--font-sans);
-            margin-bottom: 1rem;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--blue);
-        }
-
-        /* ==========================================================================
-        Footer
-        ==========================================================================
-        */
-        footer {
-            padding: 2rem 5%;
-            text-align: center;
-            font-size: var(--fz-sm);
-            color: var(--slate);
-        }
-
-        /* ==========================================================================
-        Responsive Media Queries
-        ==========================================================================
-        */
-        @media (min-width: 768px) {
-            .contact-grid {
-                grid-template-columns: 1fr 1fr;
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg);
             }
 
-            :root {
-                --fz-xxl: 3.5rem;
-                --fz-xl: 2.5rem;
+            50% {
+                transform: translateY(-20px) rotate(5deg);
             }
+
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+        }
+
+        .floating-puzzle {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 8s ease-in-out infinite;
+            z-index: 0;
         }
     </style>
 </head>
 
-<body>
+<body class="text-text-body">
 
-    <header class="app-header">
-        <div class="logo">BrAIn<span> Light</span></div>
-        <div class="competition-info">
-            CU AI Nexus 2025 Grand Finale
+    <header id="header"
+        class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <!-- Autism Puzzle Logo SVG -->
+                <svg class="h-8 w-8 text-primary-blue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                        d="M17.5 2.5C15.57 2.5 14 4.07 14 6V10H10V6C10 4.07 8.43 2.5 6.5 2.5S3 4.07 3 6V10C3 11.93 4.57 13.5 6.5 13.5S10 11.93 10 10V8H14V10C14 11.93 15.57 13.5 17.5 13.5S21 11.93 21 10V6C21 4.07 19.43 2.5 17.5 2.5ZM6.5 17.5C4.57 17.5 3 19.07 3 21V22H10V21C10 19.07 8.43 17.5 6.5 17.5ZM17.5 17.5C15.57 17.5 14 19.07 14 21V22H21V21C21 19.07 19.43 17.5 17.5 17.5Z" />
+                </svg>
+                <h1 class="text-2xl font-bold font-heading">Br<span class="text-primary-blue">AI</span>n Light</h1>
+            </a>
+            <div class="flex items-center space-x-4">
+                <button id="lang-switch"
+                    class="text-sm font-semibold text-gray-700 hover:text-primary-blue">عربي</button>
+            </div>
         </div>
     </header>
 
-    <main>
+    <main class="container mx-auto px-6">
         <!-- Tab Navigation -->
-        <nav class="tab-nav">
-            <button class="tab-link active" data-tab="home"><i class="fas fa-home"></i>Home</button>
-            <button class="tab-link" data-tab="demo"><i class="fas fa-play-circle"></i>Demo</button>
-            <button class="tab-link" data-tab="features"><i class="fas fa-star"></i>Features</button>
-            <button class="tab-link" data-tab="research"><i class="fas fa-flask"></i>Research</button>
-            <button class="tab-link" data-tab="team"><i class="fas fa-users"></i>Team</button>
-            <button class="tab-link" data-tab="contact"><i class="fas fa-envelope"></i>Contact</button>
+        <nav class="tab-nav flex border-b border-border-light overflow-x-auto">
+            <button class="tab-link active flex-shrink-0 p-4 border-b-2 border-transparent flex items-center gap-2"
+                data-tab="home"><i class="fas fa-home"></i><span data-en="Home" data-ar="الرئيسية">Home</span></button>
+            <button class="tab-link flex-shrink-0 p-4 border-b-2 border-transparent flex items-center gap-2"
+                data-tab="features"><i class="fas fa-star"></i><span data-en="Features"
+                    data-ar="المميزات">Features</span></button>
+            <button class="tab-link flex-shrink-0 p-4 border-b-2 border-transparent flex items-center gap-2"
+                data-tab="research"><i class="fas fa-book-open"></i><span data-en="Research"
+                    data-ar="الأبحاث">Research</span></button>
+
+            <button class="tab-link flex-shrink-0 p-4 border-b-2 border-transparent flex items-center gap-2"
+                data-tab="demo"><i class="fas fa-play-circle"></i><span data-en="Demo"
+                    data-ar="العرض">Demo</span></button>
+            <button class="tab-link flex-shrink-0 p-4 border-b-2 border-transparent flex items-center gap-2"
+                data-tab="team"><i class="fas fa-users"></i><span data-en="Team" data-ar="الفريق">Team</span></button>
+            <button class="tab-link flex-shrink-0 p-4 border-b-2 border-transparent flex items-center gap-2"
+                data-tab="contact"><i class="fas fa-envelope"></i><span data-en="Contact"
+                    data-ar="التواصل">Contact</span></button>
         </nav>
 
-        <!-- Tab Content Panels -->
-
         <!-- Home Section -->
-        <section id="home" class="tab-content active">
-            <h1>Empowering Every Child to Shine. ✨</h1>
-            <p class="slogan">Where Every Mind Matters 💙</p>
-            <p class="status-subtitle">
-                An AI & AR Ecosystem for Autism Support – Grand Finalist at AI Nexus 2025
-            </p>
-            <p>
-                Welcome to BrAIn Light. We are a team of AI seniors from Cairo University, proud to present
-                our research-based project designed to support autistic children, their parents, and doctors.
-            </p>
+        <section id="home" class="tab-content active py-12 hero-bg">
+            <!-- Floating puzzle pieces -->
+            <i class="fas fa-puzzle-piece floating-puzzle text-primary-blue"
+                style="top: 10%; left: 5%; font-size: 80px; animation-delay: 0s;"></i>
+            <i class="fas fa-puzzle-piece floating-puzzle text-primary-yellow"
+                style="top: 20%; right: 10%; font-size: 50px; animation-delay: 2s;"></i>
+            <i class="fas fa-puzzle-piece floating-puzzle text-primary-blue"
+                style="bottom: 15%; left: 15%; font-size: 40px; animation-delay: 4s;"></i>
+            <i class="fas fa-puzzle-piece floating-puzzle text-primary-yellow"
+                style="bottom: 25%; right: 20%; font-size: 60px; animation-delay: 6s;"></i>
 
-            <div class="journey-section">
-                <h2>Our Journey to the Grand Finale</h2>
-                <div class="journey-grid">
-                    <div class="journey-step">
-                        <div class="icon">🏆</div>
-                        <h3>Faculty Winner</h3>
-                        <p>1st Place, FCAI Qualifiers</p>
+            <div class="text-center relative z-10">
+                <h1 class="text-4xl md:text-6xl font-extrabold font-heading leading-tight"
+                    data-en="Empowering Every Child to Shine." data-ar="تمكين كل طفل ليتألق.">Empowering Every Child to
+                    Shine.</h1>
+                <p class="mt-4 text-lg md:text-xl text-text-body max-w-3xl mx-auto"
+                    data-en="An AI & AR Ecosystem for Autism Support – Grand Finalist at CU AI Nexus 2025."
+                    data-ar="نظام بيئي للذكاء الاصطناعي والواقع المعزز لدعم التوحد - المتأهل النهائي في CU AI Nexus 2025.">
+                    An AI & AR Ecosystem for Autism Support – Grand Finalist at CU AI Nexus 2025.</p>
+            </div>
+
+            <div class="py-16 text-center relative z-10">
+                <h2 class="text-3xl md:text-4xl font-bold" data-en="Our Journey to the Grand Finale"
+                    data-ar="رحلتنا إلى النهائي الكبير">Our Journey to the Grand Finale</h2>
+                <div class="grid md:grid-cols-3 gap-8 mt-12">
+                    <div class="bg-card-bg p-8 rounded-2xl shadow-lg border border-border-light">
+                        <div class="text-5xl text-primary-yellow mb-4">🏆</div>
+                        <h3 class="font-heading font-bold text-xl" data-en="Faculty Winner"
+                            data-ar="الفائز على مستوى الكلية">Faculty Winner</h3>
+                        <p class="text-sm text-text-body" data-en="1st Place, FCAI Qualifiers"
+                            data-ar="المركز الأول، تصفيات كلية الحاسبات">1st Place, FCAI Qualifiers</p>
                     </div>
-                    <div class="journey-step">
-                        <div class="icon">🏆</div>
-                        <h3>Sector Winner</h3>
-                        <p>1st Place, AI for Natural Sciences & Engineering</p>
+                    <div class="bg-card-bg p-8 rounded-2xl shadow-lg border border-border-light">
+                        <div class="text-5xl text-primary-yellow mb-4">🏆</div>
+                        <h3 class="font-heading font-bold text-xl" data-en="Sector Winner"
+                            data-ar="الفائز على مستوى القطاع">Sector Winner</h3>
+                        <p class="text-sm text-text-body" data-en="1st Place, AI for Natural Sciences & Engineering"
+                            data-ar="المركز الأول، الذكاء الاصطناعي للعلوم والهندسة">1st Place, AI for Natural Sciences
+                            & Engineering</p>
                     </div>
-                    <div class="journey-step">
-                        <div class="icon">🚀</div>
-                        <h3>Grand Finalist</h3>
-                        <p>Top 100 Teams, Final Stage</p>
+                    <div class="bg-card-bg p-8 rounded-2xl shadow-lg border border-border-light">
+                        <div class="text-5xl text-primary-yellow mb-4">🚀</div>
+                        <h3 class="font-heading font-bold text-xl" data-en="Grand Finalist"
+                            data-ar="المتأهل النهائي الكبير">Grand Finalist</h3>
+                        <p class="text-sm text-text-body" data-en="Top 100 Teams, Final Stage"
+                            data-ar="أفضل 100 فريق، المرحلة النهائية">Final Stage</p>
                     </div>
                 </div>
             </div>
 
-            <div class="summary-grid">
-                <div class="summary-card card">
-                    <h3><i class="fas fa-play-circle"></i> Watch the Demo</h3>
-                    <p>See a video walkthrough of our application and its core functionalities in action.</p>
-                    <button class="cta-button summary-button" data-tab="demo">Go to Demo</button>
+            <!-- Quick Navigation -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-left relative z-10">
+                <div class="bg-card-bg p-6 rounded-2xl shadow-lg border border-border-light flex flex-col">
+                    <i class="fas fa-star text-3xl text-primary-blue mb-4"></i>
+                    <h3 class="font-heading font-bold text-xl mb-2" data-en="Our Features" data-ar="مميزاتنا">Our
+                        Features</h3>
+                    <p class="text-sm text-text-body flex-grow mb-4"
+                        data-en="See our AI & AR tools for learning, support, and progress tracking."
+                        data-ar="اكتشف أدوات الذكاء الاصطناعي والواقع المعزز للتعلم والدعم.">See our AI & AR tools for
+                        learning,
+                        support, and progress tracking.</p>
+                    <button class="btn-secondary w-full mt-auto summary-button" data-tab="features"><span
+                            data-en="Explore" data-ar="اكتشف">Explore</span></button>
                 </div>
-                <div class="summary-card card">
-                    <h3><i class="fas fa-star"></i> Core Features</h3>
-                    <p>Discover the integrated tools we've built, from AR games to the doctor's dashboard.</p>
-                    <button class="cta-button summary-button" data-tab="features">See Features</button>
+                <div class="bg-card-bg p-6 rounded-2xl shadow-lg border border-border-light flex flex-col">
+                    <i class="fas fa-book-open text-3xl text-primary-blue mb-4"></i>
+                    <h3 class="font-heading font-bold text-xl mb-2" data-en="Research" data-ar="الأبحاث">Research</h3>
+                    <p class="text-sm text-text-body flex-grow mb-4"
+                        data-en="Learn about the scientific validation and theories behind our work."
+                        data-ar="تعرف على الإثبات العلمي والنظريات وراء عملنا.">Learn about the scientific validation
+                        and theories
+                        behind our work.</p>
+                    <button class="btn-secondary w-full mt-auto summary-button" data-tab="research"><span
+                            data-en="Learn More" data-ar="اعرف المزيد">Learn More</span></button>
                 </div>
-                <div class="summary-card card">
-                    <h3><i class="fas fa-book-open"></i> Our Research</h3>
-                    <p>Learn about the scientific foundation and validation behind our project.</p>
-                    <button class="cta-button summary-button" data-tab="research">View Research</button>
+                <div class="bg-card-bg p-6 rounded-2xl shadow-lg border border-border-light flex flex-col">
+                    <i class="fas fa-play-circle text-3xl text-primary-blue mb-4"></i>
+                    <h3 class="font-heading font-bold text-xl mb-2" data-en="Project Demo" data-ar="عرض المشروع">Project
+                        Demo</h3>
+                    <p class="text-sm text-text-body flex-grow mb-4"
+                        data-en="Watch a video walkthrough of the BrAIn Light application in action."
+                        data-ar="شاهد عرض فيديو لتطبيق BrAIn Light أثناء عمله.">Watch a video walkthrough of the BrAIn
+                        Light
+                        application in action.</p>
+                    <button class="btn-secondary w-full mt-auto summary-button" data-tab="demo"><span
+                            data-en="Watch Now" data-ar="شاهد الآن">Watch Now</span></button>
                 </div>
-                <div class="summary-card card">
-                    <h3><i class="fas fa-users"></i> Meet the Team</h3>
-                    <p>Get to know the passionate AI students from Cairo University behind BrAIn Light.</p>
-                    <button class="cta-button summary-button" data-tab="team">Meet the Team</button>
+                <div class="bg-card-bg p-6 rounded-2xl shadow-lg border border-border-light flex flex-col">
+                    <i class="fas fa-users text-3xl text-primary-blue mb-4"></i>
+                    <h3 class="font-heading font-bold text-xl mb-2" data-en="Meet the Team" data-ar="تعرف على الفريق">
+                        Meet the Team
+                    </h3>
+                    <p class="text-sm text-text-body flex-grow mb-4"
+                        data-en="The dedicated student team from Cairo University behind the project."
+                        data-ar="فريق الطلاب المتفاني من جامعة القاهرة خلف هذا المشروع.">The dedicated student team from
+                        Cairo
+                        University behind the project.</p>
+                    <button class="btn-secondary w-full mt-auto summary-button" data-tab="team"><span
+                            data-en="See Members" data-ar="الأعضاء">See Members</span></button>
+                </div>
+                <div class="bg-card-bg p-6 rounded-2xl shadow-lg border border-border-light flex flex-col">
+                    <i class="fas fa-envelope text-3xl text-primary-blue mb-4"></i>
+                    <h3 class="font-heading font-bold text-xl mb-2" data-en="Contact Us" data-ar="تواصل معنا">Contact Us
+                    </h3>
+                    <p class="text-sm text-text-body flex-grow mb-4"
+                        data-en="Get in touch with us for partnerships, sponsorships, or questions."
+                        data-ar="تواصل معنا للشراكات أو الرعاية أو طرح الأسئلة.">Get in touch with us for partnerships,
+                        sponsorships, or questions.</p>
+                    <button class="btn-secondary w-full mt-auto summary-button" data-tab="contact"><span
+                            data-en="Get in Touch" data-ar="تواصل">Get in Touch</span></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="tab-content py-16">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-bold" data-en="An Integrated AI & AR Ecosystem"
+                    data-ar="نظام متكامل بالذكاء الاصطناعي والواقع المعزز">
+                    An Integrated AI & AR Ecosystem
+                </h2>
+                <p class="text-lg text-text-body mt-2 mb-16 max-w-3xl mx-auto"
+                    data-en="Engage, learn, and grow — BrAIn Light connects children, parents, and doctors through play, empathy, and data-driven insight."
+                    data-ar="التفاعل، التعلم، والتطور — BrAIn Light يربط الطفل ووالديه والطبيب من خلال اللعب والتعاطف والرؤى المستندة إلى البيانات.">
+                    Engage, learn, and grow — BrAIn Light connects children, parents, and doctors through play, empathy,
+                    and
+                    data-driven insight.
+                </p>
+            </div>
+
+            <div class="space-y-20">
+
+                <!-- Feature 1: AR Object Detection -->
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2 md:pr-10 text-center md:text-left">
+                        <span class="font-semibold text-primary-blue" data-en="REAL-WORLD LEARNING"
+                            data-ar="تعلم واقعي">REAL-WORLD LEARNING</span>
+                        <h3 class="text-3xl font-bold font-heading mt-2" data-en="AR Object Detection"
+                            data-ar="اكتشاف الأشياء بالواقع المعزز">
+                            AR Object Detection
+                        </h3>
+                        <p class="mt-4"
+                            data-en="Our AR-powered learning replaces flashcards with real-time object detection. Children simply point the camera at real items — like an apple or a cup — and the app names them aloud in Arabic or English, turning everyday moments into lessons."
+                            data-ar="ميزة الواقع المعزز تستبدل البطاقات التعليمية بالتعرف الفوري على الأشياء. يوجه الطفل الكاميرا نحو أشياء حقيقية — مثل التفاحة أو الكوب — فينطق التطبيق اسمها بالعربية أو الإنجليزية، ليحول اللحظات اليومية إلى دروس تعليمية.">
+                            Our AR-powered learning replaces flashcards with real-time object detection. Children simply
+                            point
+                            the camera at real items — like an apple or a cup — and the app names them aloud in Arabic
+                            or
+                            English, turning everyday moments into lessons.
+                        </p>
+                    </div>
+                    <div class="md:w-1/2 p-8 bg-blue-50 rounded-2xl flex justify-center items-center">
+                        <i class="fas fa-camera text-7xl text-primary-blue"></i>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Skill-Building Games -->
+                <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+                    <div class="md:w-1/2 md:pl-10 text-center md:text-left">
+                        <span class="font-semibold text-primary-blue" data-en="PLAY-BASED THERAPY"
+                            data-ar="علاج قائم على اللعب">PLAY-BASED THERAPY</span>
+                        <h3 class="text-3xl font-bold font-heading mt-2" data-en="Skill-Building Games"
+                            data-ar="ألعاب تنمية المهارات">
+                            Skill-Building Games
+                        </h3>
+                        <p class="mt-4"
+                            data-en="Our bilingual games — Matching, Memory Cards, Puzzles, and Object Questions — improve attention, memory, and recognition skills. Each game adapts to the child’s ability and tracks measurable progress through stars and scores."
+                            data-ar="ألعابنا الثنائية اللغة — المطابقة، بطاقات الذاكرة، الألغاز، وأسئلة التعرف على الأشياء — تطور الانتباه والذاكرة ومهارات التمييز. تتكيف الألعاب مع مستوى الطفل وتتابع التقدم عبر النجوم والدرجات.">
+                            Our bilingual games — Matching, Memory Cards, Puzzles, and Object Questions — improve
+                            attention,
+                            memory, and recognition skills. Each game adapts to the child’s ability and tracks
+                            measurable
+                            progress through stars and scores.
+                        </p>
+                    </div>
+                    <div class="md:w-1/2 p-8 bg-blue-50 rounded-2xl flex justify-center items-center">
+                        <i class="fas fa-gamepad text-7xl text-primary-blue"></i>
+                    </div>
+                </div>
+
+                <!-- Feature 3: Emotion Detection Game -->
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2 md:pr-10 text-center md:text-left">
+                        <span class="font-semibold text-primary-blue" data-en="SOCIAL CONNECTION"
+                            data-ar="الاتصال الاجتماعي">SOCIAL CONNECTION</span>
+                        <h3 class="text-3xl font-bold font-heading mt-2" data-en="Emotion Detection Game"
+                            data-ar="لعبة التعرف على المشاعر">
+                            Emotion Detection Game
+                        </h3>
+                        <p class="mt-4"
+                            data-en="Using facial expression recognition, children playfully identify emotions like happiness, sadness, or surprise. This builds empathy, improves nonverbal understanding, and supports emotional development."
+                            data-ar="باستخدام التعرف على تعابير الوجه، يتعرف الطفل بطريقة ممتعة على المشاعر مثل الفرح أو الحزن أو الدهشة. يعزز ذلك التعاطف، والفهم غير اللفظي، والتطور العاطفي.">
+                            Using facial expression recognition, children playfully identify emotions like happiness,
+                            sadness,
+                            or surprise. This builds empathy, improves nonverbal understanding, and supports emotional
+                            development.
+                        </p>
+                    </div>
+                    <div class="md:w-1/2 p-8 bg-blue-50 rounded-2xl flex justify-center items-center">
+                        <i class="fas fa-smile-beam text-7xl text-primary-blue"></i>
+                    </div>
+                </div>
+
+                <!-- Feature 4: AI Chatbot -->
+                <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+                    <div class="md:w-1/2 md:pl-10 text-center md:text-left">
+                        <span class="font-semibold text-primary-blue" data-en="24/7 GUIDANCE"
+                            data-ar="إرشاد متواصل">24/7
+                            GUIDANCE</span>
+                        <h3 class="text-3xl font-bold font-heading mt-2" data-en="AI Chatbot Assistant"
+                            data-ar="مساعد الدردشة الذكي">
+                            AI Chatbot Assistant
+                        </h3>
+                        <p class="mt-4"
+                            data-en="Available anytime in Arabic and English, our chatbot offers verified advice and empathetic support for parents, using real progress data from the child’s activity to personalize guidance."
+                            data-ar="متاح في أي وقت بالعربية والإنجليزية، يقدم المساعد نصائح موثوقة ودعمًا متعاطفًا للآباء، باستخدام بيانات تقدم الطفل لتخصيص الإرشاد.">
+                            Available anytime in Arabic and English, our chatbot offers verified advice and empathetic
+                            support
+                            for parents, using real progress data from the child’s activity to personalize guidance.
+                        </p>
+                    </div>
+                    <div class="md:w-1/2 p-8 bg-blue-50 rounded-2xl flex justify-center items-center">
+                        <i class="fas fa-robot text-7xl text-primary-blue"></i>
+                    </div>
+                </div>
+
+                <!-- Feature 5: Doctor’s Dashboard & Appointments -->
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2 md:pr-10 text-center md:text-left">
+                        <span class="font-semibold text-primary-blue" data-en="PROFESSIONAL CARE"
+                            data-ar="رعاية مهنية">PROFESSIONAL CARE</span>
+                        <h3 class="text-3xl font-bold font-heading mt-2" data-en="Doctor’s Dashboard & Appointments"
+                            data-ar="لوحة الطبيب والمواعيد">
+                            Doctor’s Dashboard & Appointments
+                        </h3>
+                        <p class="mt-4"
+                            data-en="Doctors can access detailed progress dashboards and book or manage follow-up appointments directly through the app — simplifying continuous care and communication between families and specialists."
+                            data-ar="يمكن للأطباء الوصول إلى لوحات متابعة تفصيلية وحجز أو إدارة مواعيد المتابعة مباشرة من خلال التطبيق — مما يسهل الرعاية المستمرة والتواصل بين الأسر والمتخصصين.">
+                            Doctors can access detailed progress dashboards and book or manage follow-up appointments
+                            directly
+                            through the app — simplifying continuous care and communication between families and
+                            specialists.
+                        </p>
+                    </div>
+                    <div class="md:w-1/2 p-8 bg-blue-50 rounded-2xl flex justify-center items-center">
+                        <i class="fas fa-calendar-check text-7xl text-primary-blue"></i>
+                    </div>
+                </div>
+
+                <!-- Feature 6: Personalized Reports -->
+                <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+                    <div class="md:w-1/2 md:pl-10 text-center md:text-left">
+                        <span class="font-semibold text-primary-blue" data-en="SMART INSIGHTS" data-ar="رؤى ذكية">SMART
+                            INSIGHTS</span>
+                        <h3 class="text-3xl font-bold font-heading mt-2" data-en="Personalized Reports"
+                            data-ar="تقارير مخصصة">
+                            Personalized Reports
+                        </h3>
+                        <p class="mt-4"
+                            data-en="Parents receive clear, visual progress reports summarizing performance, attention, and emotional stability. AI transforms daily scores into easy-to-read insights and suggestions."
+                            data-ar="يتلقى الأهل تقارير مرئية وواضحة تلخص الأداء والانتباه والاستقرار العاطفي. يحول الذكاء الاصطناعي الدرجات اليومية إلى رؤى وتوصيات سهلة الفهم.">
+                            Parents receive clear, visual progress reports summarizing performance, attention, and
+                            emotional
+                            stability. AI transforms daily scores into easy-to-read insights and suggestions.
+                        </p>
+                    </div>
+                    <div class="md:w-1/2 p-8 bg-blue-50 rounded-2xl flex justify-center items-center">
+                        <i class="fas fa-chart-line text-7xl text-primary-blue"></i>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- Gemini Demo Modal -->
+        <div id="chatbot-demo-modal" class="hidden fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
+            <div class="bg-card-bg rounded-2xl shadow-2xl p-6 w-full max-w-lg relative">
+                <button id="close-chatbot-modal"
+                    class="absolute top-4 right-4 text-2xl text-text-body hover:text-text-dark">&times;</button>
+                <h3 class="font-heading font-bold text-xl mb-4" data-en="AI Chatbot Assistant Demo"
+                    data-ar="عرض مساعد الدردشة الذكي">AI Chatbot Assistant Demo</h3>
+                <div class="space-x-2 mb-4">
+                    <button class="px-3 py-1 text-sm bg-blue-100 text-blue-800 rounded-full hover:bg-blue-200"
+                        data-question="How can I handle a public meltdown?" data-ar-text="نوبات الغضب العامة">Public
+                        Meltdowns</button>
+                    <button class="px-3 py-1 text-sm bg-blue-100 text-blue-800 rounded-full hover:bg-blue-200"
+                        data-question="What are some sensory-friendly activities?" data-ar-text="أنشطة حسية">Activity
+                        Ideas</button>
+                </div>
+                <div id="chatbot-response" class="bg-bg-color p-4 rounded-lg min-h-[120px] text-text-body"></div>
+            </div>
+        </div>
+        </section>
+
+        <!-- Demo Section -->
+        <section id="demo" class="tab-content py-16">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-bold" data-en="See BrAIn Light in Action"
+                    data-ar="شاهد BrAIn Light عمليًا">See BrAIn Light in Action</h2>
+                <p class="text-lg text-text-body mt-2 mb-12 max-w-3xl mx-auto"
+                    data-en="Experience how our fusion of AI and AR turns therapy into engaging play."
+                    data-ar="جرب كيف يحول اندماج الذكاء الاصطناعي والواقع المعزز العلاج إلى لعب ممتع.">Experience how
+                    our fusion of AI and AR turns therapy into engaging play.</p>
+            </div>
+            <div class="max-w-4xl mx-auto bg-card-bg p-2 md:p-4 rounded-2xl shadow-2xl border border-border-light">
+                <div class="aspect-w-16 aspect-h-9">
+                    <!-- EDIT ME: Replace the src below with your YouTube video's "embed" link. -->
+                    <iframe class="rounded-lg" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        title="BrAIn Light Project Demo"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <!-- EDIT ME: Replace '#' with the direct link to your full demo video. -->
+                <a href="#" class="btn-primary"><i class="fas fa-external-link-alt"></i> <span
+                        data-en="Watch Full Demo on YouTube" data-ar="شاهد العرض الكامل على يوتيوب">Watch Full Demo on
+                        YouTube</span></a>
+            </div>
+
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-center mb-8" data-en="Related Awareness Videos"
+                    data-ar="فيديوهات توعوية ذات صلة">Related Awareness Videos</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- EDIT ME: Add links and titles for other awareness videos -->
+                    <div class="bg-card-bg p-4 rounded-xl shadow-lg border border-border-light">
+                        <div class="aspect-w-16 aspect-h-9">
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/y4vurv9usYA?si=PBBljn1Jemx6DyNS"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <p class="font-semibold text-text-dark mt-3" data-en="What it's really like to have autism"
+                            data-ar="ما يشبه حقًا أن تكون مصابًا بالتوحد">What it's really like to have autism</p>
+                    </div>
+                    <div class="bg-card-bg p-4 rounded-xl shadow-lg border border-border-light">
+                        <div class="aspect-w-16 aspect-h-9">
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/NEy6Oj8dmCc?si=vAOhXBw5aan67vi-"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <p class="font-semibold text-text-dark mt-3" data-en="Autism" data-ar="التوحد">التوحد | الدحيح
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Research Section -->
+        <section id="research" class="tab-content py-16">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-bold" data-en="Grounded in Science" data-ar="مبني على أسس علمية">
+                    Grounded
+                    in Science</h2>
+                <p class="text-lg text-text-body mt-2 mb-12 max-w-3xl mx-auto"
+                    data-en="Our methodology is built upon established psychological theories and validated by experts to ensure our solution is clinically relevant and ethically sound."
+                    data-ar="منهجيتنا مبنية على نظريات نفسية راسخة وتم التحقق منها من قبل خبراء لضمان أن حلنا ملائم سريريًا وسليم أخلاقيًا.">
+                    Our methodology is built upon established psychological theories and validated by experts to ensure
+                    our
+                    solution is clinically relevant and ethically sound.</p>
+            </div>
+            <div class="max-w-3xl mx-auto bg-card-bg p-8 rounded-2xl shadow-lg border border-border-light">
+                <h3 class="font-heading font-bold text-2xl mb-4" data-en="Core Principles" data-ar="المبادئ الأساسية">
+                    Core
+                    Principles</h3>
+                <ul class="list-disc list-inside space-y-2 mb-8">
+                    <li data-en="Based on the 'Triad of Impairments' theory."
+                        data-ar="مبني على نظرية 'ثالوث الاعتلالات'.">Based
+                        on the 'Triad of Impairments' theory.</li>
+                    <li data-en="Addresses the 'Double Empathy Problem'." data-ar="يعالج 'مشكلة التعاطف المزدوج'.">
+                        Addresses the
+                        'Double Empathy Problem'.</li>
+                    <li data-en="Consultations with doctors, therapists, and autism experts."
+                        data-ar="مشاورات مع الأطباء والمعالجين وخبراء التوحد.">Consultations with doctors, therapists,
+                        and
+                        autism experts.</li>
+                </ul>
+                <h3 class="font-heading font-bold text-2xl mb-4" data-en="Key Research Resources"
+                    data-ar="مصادر بحثية رئيسية">
+                    Key Research Resources</h3>
+                <div class="space-y-3">
+                    <!-- EDIT ME: Replace '#' with actual links to papers and update titles -->
+                    <a href="#" target="_blank"
+                        class="flex items-center gap-3 text-primary-blue hover:text-dark-blue"><i
+                            class="fas fa-file-alt"></i> <span data-en="AI in Autism Therapy: A Review"
+                            data-ar="الذكاء الاصطناعي في علاج التوحد: مراجعة">AI in Autism Therapy: A Review</span></a>
+                    <a href="#" target="_blank"
+                        class="flex items-center gap-3 text-primary-blue hover:text-dark-blue"><i
+                            class="fas fa-file-alt"></i> <span data-en="Effectiveness of AR for Social Skills"
+                            data-ar="فعالية الواقع المعزز للمهارات الاجتماعية">Effectiveness of AR for Social
+                            Skills</span></a>
+                </div>
+                <div class="text-center mt-12">
+                    <!-- EDIT ME: Replace '#' with the link to your full resources document/folder. -->
+                    <a href="#" class="btn-primary"><i class="fas fa-folder-open"></i> <span
+                            data-en="View Full Resources & Validation" data-ar="عرض جميع المصادر والتحقق">View Full
+                            Resources &
+                            Validation</span></a>
                 </div>
             </div>
         </section>
 
         <!-- Demo Section -->
-        <section id="demo" class="tab-content">
-            <h2>See BrAIn Light in Action</h2>
-            <p>Experience how our fusion of AI and AR turns therapy into engaging play.</p>
-            <div class="video-wrapper">
-                <!-- EDIT ME: Replace the src below with your YouTube video's "embed" link. -->
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="BrAIn Light Project Demo"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+        <section id="demo" class="tab-content py-16">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-bold" data-en="See BrAIn Light in Action"
+                    data-ar="شاهد BrAIn Light عمليًا">See BrAIn Light in Action</h2>
+                <p class="text-lg text-text-body mt-2 mb-12 max-w-3xl mx-auto"
+                    data-en="Experience how our fusion of AI and AR turns therapy into engaging play."
+                    data-ar="جرب كيف يحول اندماج الذكاء الاصطناعي والواقع المعزز العلاج إلى لعب ممتع.">Experience how
+                    our fusion
+                    of AI and AR turns therapy into engaging play.</p>
             </div>
-            <!-- EDIT ME: Replace '#' with the direct link to your full demo video. -->
-            <a href="#" class="cta-button" target="_blank" rel="noopener noreferrer">▶ Watch Full Demo</a>
-        </section>
-
-        <!-- Features Section -->
-        <section id="features" class="tab-content">
-            <h2>An Integrated Support System</h2>
-            <div class="features-grid">
-                <div class="feature-card card">
-                    <div class="icon"><i class="fas fa-vr-cardboard"></i></div>
-                    <h3>AR-Based Games</h3>
-                    <p>Our AR approach uses live object detection,
-                        replacing traditional flashcards for a real-world learning experience.
-                        Engaging games to improve skills like memory and learning</p>
-                </div>
-                <div class="feature-card card">
-                    <div class="icon"><i class="fas fa-robot"></i></div>
-                    <h3>AI Chatbot Assistant</h3>
-                    <p>Medically-verified, empathetic support for parents, powered by Gemini.</p>
-                    <div class="gemini-demo">
-                        <button class="cta-button demo-button" id="toggle-chatbot-demo">✨ Try a Live Demo</button>
-                        <div class="chatbot-demo-interface" id="chatbot-demo">
-                            <div class="preset-questions">
-                                <button data-question="How can I handle a public meltdown?">Public Meltdowns</button>
-                                <button data-question="What are some sensory-friendly activities?">Activity
-                                    Ideas</button>
-                                <button data-question="How do I explain autism to my family?">Explaining Autism</button>
-                            </div>
-                            <div id="chatbot-response">
-                                <p>Ask a question to see an AI-generated response.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature-card card">
-                    <div class="icon"><i class="fas fa-smile-beam"></i></div>
-                    <h3>Emotion Recognition</h3>
-                    <p>AI-powered tools to help children identify and express emotions.</p>
-                </div>
-                <div class="feature-card card">
-                    <div class="icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>Personalized Reports</h3>
-                    <p>Clear, visual progress reports for parents to track development.</p>
-                </div>
-                <div class="feature-card card">
-                    <div class="icon"><i class="fas fa-user-md"></i></div>
-                    <h3>Doctor’s Dashboard</h3>
-                    <p>A secure portal for therapists to monitor data and collaborate on care.</p>
-                    <div class="gemini-demo">
-                        <button class="cta-button demo-button" id="toggle-summary-demo">✨ See AI Summary
-                            Generator</button>
-                        <div class="summary-generator-interface" id="summary-demo">
-                            <div class="sliders">
-                                <div class="slider-group">
-                                    <label for="emotion-slider">Emotion Recognition:</label>
-                                    <input type="range" id="emotion-slider" min="0" max="100" value="75">
-                                </div>
-                                <div class="slider-group">
-                                    <label for="memory-slider">Memory Score:</label>
-                                    <input type="range" id="memory-slider" min="0" max="100" value="60">
-                                </div>
-                                <div class="slider-group">
-                                    <label for="social-slider">Social Interaction:</label>
-                                    <input type="range" id="social-slider" min="0" max="100" value="85">
-                                </div>
-                            </div>
-                            <button class="cta-button demo-button" id="generate-summary-btn">✨ Generate AI
-                                Summary</button>
-                            <div id="summary-output" style="margin-top: 1rem;">
-                                <p>Adjust the sliders and click generate.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature-card card">
-                    <div class="icon"><i class="fas fa-cloud"></i></div>
-                    <h3>Cloud-Native & Scalable</h3>
-                    <p>A robust, cross-platform solution built to grow with families.</p>
+            <div class="max-w-4xl mx-auto bg-card-bg p-2 md:p-4 rounded-2xl shadow-2xl border border-border-light">
+                <div class="aspect-w-16 aspect-h-9">
+                    <!-- EDIT ME: Replace the src below with your YouTube video's "embed" link. -->
+                    <iframe class="rounded-lg" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        title="BrAIn Light Project Demo"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                 </div>
             </div>
-        </section>
+            <div class="text-center mt-8">
+                <!-- EDIT ME: Replace '#' with the direct link to your full demo video. -->
+                <a href="#" class="btn-primary"><i class="fas fa-external-link-alt"></i> <span
+                        data-en="Watch Full Demo on YouTube" data-ar="شاهد العرض الكامل على يوتيوب">Watch Full Demo on
+                        YouTube</span></a>
+            </div>
 
-        <!-- Research Section -->
-        <section id="research" class="tab-content">
-            <h2>Grounded in Science</h2>
-            <p>Our methodology is built upon established psychological theories like the "Triad of Impairiments" and the
-                "Double Empathy Problem." We have validated our approach through consultations with doctors, therapists,
-                and autism experts to ensure our solution is clinically relevant and ethically sound.</p>
-            <div>
-                <!-- EDIT ME: Replace '#' with the link to your research summary PDF or Google Doc. -->
-                <a href="#" class="cta-button" target="_blank" rel="noopener noreferrer">📚 View Research Summary</a>
-                <!-- EDIT ME: Replace '#' with the link to a document with your references. -->
-                <a href="#" class="cta-button" target="_blank" rel="noopener noreferrer">📄 Access References</a>
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-center mb-8" data-en="Related Awareness Videos"
+                    data-ar="فيديوهات توعوية ذات صلة">Related Awareness Videos</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- EDIT ME: Add links and titles for other awareness videos -->
+                    <div class="bg-card-bg p-4 rounded-xl shadow-lg border border-border-light">
+                        <div class="aspect-w-16 aspect-h-9">
+                            <iframe class="rounded-lg" src="https://www.youtube.com/embed/d4G0HT_unmk"
+                                title="Amazing Things Happen"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <p class="font-semibold text-text-dark mt-3" data-en="Amazing Things Happen"
+                            data-ar="أشياء مذهلة تحدث">
+                            Amazing Things Happen</p>
+                    </div>
+                    <div class="bg-card-bg p-4 rounded-xl shadow-lg border border-border-light">
+                        <div class="aspect-w-16 aspect-h-9">
+                            <iframe class="rounded-lg" src="https://www.youtube.com/embed/Lk4qs8jGN28"
+                                title="What It's Like to Have Autism"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <p class="font-semibold text-text-dark mt-3" data-en="What It's Like to Have Autism"
+                            data-ar="ماذا يعني أن تكون مصابًا بالتوحد">What It's Like to Have Autism</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Team Section -->
-        <section id="team" class="tab-content">
-            <h2>Meet the Minds Behind the Light</h2>
-            <p style="text-align: center; margin-top: -1.5rem; margin-bottom: 2rem;">A dedicated team of 6 AI
-                engineering students from the Faculty of Computers & AI, Cairo University.</p>
-            <div class="team-grid">
-                <!-- EDIT ME: Update the details for each of your 6 team members below. Use a real photo link or keep the placeholder. -->
-                <!-- Member 1 -->
-                <div class="team-member card">
-                    <img src="https://via.placeholder.com/100/0a192f/64ffda.png?text=M" alt="Photo of Moaz">
-                    <h3>Moaz</h3>
-                    <!-- <p class="role">Team Lead & Presenter</p> -->
-                    <p class="tagline">"AI for Cognitive Tech"</p>
-                </div>
-                <!-- Member 2 -->
-                <div class="team-member card">
-                    <img src="https://via.placeholder.com/100/0a192f/64ffda.png?text=AI" alt="Team Member Photo">
-                    <h3>Member Name</h3>
-                    <!-- <p class="role">Lead AI Developer</p> -->
-                    <p class="tagline">"Machine Learning Specialist"</p>
-                </div>
-                <!-- Member 3 -->
-                <div class="team-member card">
-                    <img src="https://via.placeholder.com/100/0a192f/64ffda.png?text=FE" alt="Team Member Photo">
-                    <h3>Member Name</h3>
-                    <!-- <p class="role">Frontend & Flutter</p> -->
-                    <p class="tagline">"Crafting User Experiences"</p>
-                </div>
-                <!-- Member 4 -->
-                <div class="team-member card">
-                    <img src="https://via.placeholder.com/100/0a192f/64ffda.png?text=BE" alt="Team Member Photo">
-                    <h3>Member Name</h3>
-                    <!-- <p class="role">Backend & Cloud</p> -->
-                    <p class="tagline">"Building Scalable Systems"</p>
-                </div>
-                <!-- Member 5 -->
-                <div class="team-member card">
-                    <img src="https://via.placeholder.com/100/0a192f/64ffda.png?text=UX" alt="Team Member Photo">
-                    <h3>Member Name</h3>
-                    <!-- <p class="role">UX/UI & Research</p> -->
-                    <p class="tagline">"Design with Empathy"</p>
-                </div>
-                <!-- Member 6 -->
-                <div class="team-member card">
-                    <img src="https://via.placeholder.com/100/0a192f/64ffda.png?text=DV" alt="Team Member Photo">
-                    <h3>Member Name</h3>
-                    <!-- <p class="role">Data & Validation</p> -->
-                    <p class="tagline">"Ensuring Clinical Relevance"</p>
-                </div>
+        <section id="team" class="tab-content py-16">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-bold" data-en="Meet the Minds Behind the Light"
+                    data-ar="تعرف على العقول خلف الضوء">Meet the Minds Behind the Light</h2>
+                <p class="text-lg text-text-body mt-2 mb-12 max-w-3xl mx-auto"
+                    data-en="A dedicated team of 6 AI students from the Faculty of Computing & AI, Cairo University."
+                    data-ar="فريق متخصص من 6 طلاب ذكاء اصطناعي من كلية الحاسبات والذكاء الاصطناعي بجامعة القاهرة.">A
+                    dedicated team of 6 AI students from the Faculty of Computing & AI, Cairo University.</p>
             </div>
-            <div style="text-align: center; margin-top: 2rem;">
-                <!-- EDIT ME: Replace '#' with the link to your team's CVs (e.g., a Google Drive folder). -->
-                <a href="#" class="cta-button" target="_blank" rel="noopener noreferrer">📄 View Team CVs</a>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- EDIT ME: Update details for each team member. Add your real links. -->
+                <div
+                    class="team-member group bg-card-bg p-6 rounded-2xl shadow-lg border border-border-light text-center">
+                    <img src="https://placehold.co/128x128/007BFF/FFFFFF?text=M" alt="Moaz"
+                        class="w-32 h-32 rounded-full object-cover mx-auto border-4 border-white shadow-lg group-hover:scale-105 transition-transform">
+                    <h4 class="mt-4 font-bold font-heading">Moaz Gehad</h4>
+                    <p class="text-sm text-primary-blue font-medium" data-en="Team Lead" data-ar="قائد الفريق">Team Lead
+                    </p>
+                    <div class="flex justify-center gap-4 mt-3">
+                        <a href="#" class="text-gray-400 hover:text-primary-blue"><i
+                                class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="mailto:moazgehad1@gmail.com" class="text-gray-400 hover:text-primary-blue"><i
+                                class="fas fa-envelope fa-lg"></i></a>
+                    </div>
+                    <!-- <a href="#" class="mt-4 btn-secondary w-full text-sm"><span data-en="View CV"
+                            data-ar="عرض السيرة الذاتية">View CV</span></a> -->
+                </div>
+                <!-- Repeat for other members -->
+                <div
+                    class="team-member group bg-card-bg p-6 rounded-2xl shadow-lg border border-border-light text-center">
+                    <img src="https://placehold.co/128x128/007BFF/FFFFFF?text=R" alt="Rana"
+                        class="w-32 h-32 rounded-full object-cover mx-auto border-4 border-white shadow-lg group-hover:scale-105 transition-transform">
+                    <h4 class="mt-4 font-bold font-heading">Rana</h4>
+                    <p class="text-sm text-primary-blue font-medium" data-en="Lead AI Dev"
+                        data-ar="مهندس ذكاء اصطناعي ">Lead AI Dev</p>
+                    <div class="flex justify-center gap-4 mt-3">
+                        <a href="#" class="text-gray-400 hover:text-primary-blue"><i
+                                class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary-blue"><i
+                                class="fas fa-envelope fa-lg"></i></a>
+                    </div>
+                    <!-- <a href="#" class="mt-4 btn-secondary w-full text-sm"><span data-en="View CV"
+                            data-ar="عرض السيرة الذاتية">View CV</span></a> -->
+                </div>
+                <div
+                    class="team-member group bg-card-bg p-6 rounded-2xl shadow-lg border border-border-light text-center">
+                    <img src="https://placehold.co/128x128/007BFF/FFFFFF?text=N" alt="Nadine"
+                        class="w-32 h-32 rounded-full object-cover mx-auto border-4 border-white shadow-lg group-hover:scale-105 transition-transform">
+                    <h4 class="mt-4 font-bold font-heading">Nadine</h4>
+                    <p class="text-sm text-primary-blue font-medium" data-en="Flutter Dev" data-ar="مطور فلاتر">Flutter
+                        Dev</p>
+                    <div class="flex justify-center gap-4 mt-3">
+                        <a href="#" class="text-gray-400 hover:text-primary-blue"><i
+                                class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary-blue"><i
+                                class="fas fa-envelope fa-lg"></i></a>
+                    </div>
+                    <!-- <a href="#" class="mt-4 btn-secondary w-full text-sm"><span data-en="View CV"
+                            data-ar="عرض السيرة الذاتية">View CV</span></a> -->
+                </div>
+                <div
+                    class="team-member group bg-card-bg p-6 rounded-2xl shadow-lg border border-border-light text-center">
+                    <img src="https://placehold.co/128x128/007BFF/FFFFFF?text=A" alt="Abdelrahman"
+                        class="w-32 h-32 rounded-full object-cover mx-auto border-4 border-white shadow-lg group-hover:scale-105 transition-transform">
+                    <h4 class="mt-4 font-bold font-heading">Abdelrahman</h4>
+                    <p class="text-sm text-primary-blue font-medium" data-en="AR Developer" data-ar="مطور واقع معزز">AR
+                        Developer</p>
+                    <div class="flex justify-center gap-4 mt-3">
+                        <a href="#" class="text-gray-400 hover:text-primary-blue"><i
+                                class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary-blue"><i
+                                class="fas fa-envelope fa-lg"></i></a>
+                    </div>
+                    <!-- <a href="#" class="mt-4 btn-secondary w-full text-sm"><span data-en="View CV"
+                            data-ar="عرض السيرة الذاتية">View CV</span></a> -->
+                </div>
+                <div
+                    class="team-member group bg-card-bg p-6 rounded-2xl shadow-lg border border-border-light text-center">
+                    <img src="https://placehold.co/128x128/007BFF/FFFFFF?text=Mh" alt="Mahmoud"
+                        class="w-32 h-32 rounded-full object-cover mx-auto border-4 border-white shadow-lg group-hover:scale-105 transition-transform">
+                    <h4 class="mt-4 font-bold font-heading">Mahmoud</h4>
+                    <p class="text-sm text-primary-blue font-medium" data-en="Data & Validation"
+                        data-ar="البيانات والتحقق">Data & Validation</p>
+                    <div class="flex justify-center gap-4 mt-3">
+                        <a href="#" class="text-gray-400 hover:text-primary-blue"><i
+                                class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary-blue"><i
+                                class="fas fa-envelope fa-lg"></i></a>
+                    </div>
+                    <!-- <a href="#" class="mt-4 btn-secondary w-full text-sm"><span data-en="View CV"
+                            data-ar="عرض السيرة الذاتية">View CV</span></a> -->
+                </div>
+                <div
+                    class="team-member group bg-card-bg p-6 rounded-2xl shadow-lg border border-border-light text-center">
+                    <img src="https://placehold.co/128x128/007BFF/FFFFFF?text=Mn" alt="Menna"
+                        class="w-32 h-32 rounded-full object-cover mx-auto border-4 border-white shadow-lg group-hover:scale-105 transition-transform">
+                    <h4 class="mt-4 font-bold font-heading">Menna</h4>
+                    <p class="text-sm text-primary-blue font-medium" data-en="UX/UI & Research" data-ar="تصميم وبحث">
+                        UX/UI & Research</p>
+                    <div class="flex justify-center gap-4 mt-3">
+                        <a href="#" class="text-gray-400 hover:text-primary-blue"><i
+                                class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary-blue"><i
+                                class="fas fa-envelope fa-lg"></i></a>
+                    </div>
+                    <!-- <a href="#" class="mt-4 btn-secondary w-full text-sm"><span data-en="View CV"
+                            data-ar="عرض السيرة الذاتية">View CV</span></a> -->
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <!-- EDIT ME: Replace '#' with the link to your team's CVs (e.g., a Google Drive folder). -->
+                    <div class="flex justify-center">
+                        <a href="https://drive.google.com/drive/folders/1PqrLW5wMW2D9appNTLZ7l1nCbgcyUxJm?usp=sharing"
+                            class="btn-primary inline-flex items-center justify-center mx-auto px-6 py-3 rounded-full shadow-lg hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary-blue/20 transition-transform"
+                            target="_blank" rel="noopener noreferrer" role="button" aria-label="View Team CVs"
+                            tabindex="0">
+                            <span class="text-lg">📄</span>
+                            <span class="ml-3 font-semibold">View Team CVs</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="tab-content">
-            <h2>Get In Touch</h2>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Contact Details</h3>
-                    <p>We'd love to hear from potential partners, sponsors, and supporters.</p>
-                    <p>
-                        <i class="fas fa-envelope"></i>
-                        <!-- EDIT ME: Verify your contact email. -->
-                        <a href="mailto:brainlight.project@gmail.com"> brainlight.project@gmail.com</a>
-                    </p>
-                    <p class="social-icons">
-                        <!-- EDIT ME: Replace '#' with your LinkedIn profile or project page link. -->
-                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i
-                                class="fab fa-linkedin"></i></a>
-                        <!-- EDIT ME: Replace '#' with your project's GitHub repository link. -->
-                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
-                                class="fab fa-github"></i></a>
-                    </p>
+        <section id="contact" class="tab-content py-16">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-bold" data-en="Join Us in Lighting the Way"
+                    data-ar="انضم إلينا في إضاءة الطريق">Join Us in Lighting the Way</h2>
+                <p class="text-lg text-text-body mt-2 mb-12 max-w-3xl mx-auto"
+                    data-en="We are looking for partners, sponsors, and collaborators to help us scale our impact and bring BrAIn Light to more families."
+                    data-ar="نبحث عن شركاء ورعاة ومتعاونين لمساعدتنا على توسيع نطاق تأثيرنا وإيصال BrAIn Light إلى المزيد من العائلات.">
+                    We are looking for partners, sponsors, and collaborators to help us scale our impact and bring BrAIn
+                    Light to more families.</p>
+            </div>
+            <div class="max-w-2xl mx-auto bg-card-bg p-8 rounded-2xl shadow-lg border border-border-light text-center">
+                <h3 class="font-heading font-bold text-xl mb-2" data-en="Contact the Team Lead"
+                    data-ar="تواصل مع قائد الفريق">Contact the Team Lead</h3>
+                <p class="text-text-body mb-4" data-en="For direct inquiries:" data-ar="للاستفسارات المباشرة:">For
+                    direct inquiries:</p>
+
+                <div class="mt-8">
+                    <a href="mailto:moazgehad1@gmail.com" class="btn-primary"><i class="fas fa-envelope"></i>
+                        <span data-en="Contact Project Team" data-ar="تواصل مع فريق المشروع">Contact Project
+                            Team</span></a>
                 </div>
-                <form class="contact-form" action="#" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="cta-button">Send Message</button>
-                </form>
             </div>
         </section>
     </main>
 
-    <footer>
-        Copyright © 2025 BrAIn Light 💙 Faculty of Computing & AI, Cairo University
+    <footer class="bg-text-dark text-white pt-12 pb-8 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center items-center space-x-6 mb-6">
+                <!-- EDIT ME: Replace '#' with your project's social media links. -->
+                <a href="#" class="text-gray-400 hover:text-white transition" aria-label="LinkedIn"><i
+                        class="fab fa-linkedin fa-lg"></i></a>
+                <a href="https://github.com/ranaehelal/brainlight-app" class="text-gray-400 hover:text-white transition"
+                    aria-label="GitHub"><i class="fab fa-github fa-lg"></i></a>
+            </div>
+            <p class="font-heading">&copy; 2025 BrAIn Light 💙 Faculty of Computing & AI, Cairo University</p>
+        </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', function () {
             const tabs = document.querySelectorAll('.tab-link');
             const contents = document.querySelectorAll('.tab-content');
             const summaryButtons = document.querySelectorAll('.summary-button');
 
-            // Tab navigation logic
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    const target = document.getElementById(tab.dataset.tab);
-                    tabs.forEach(t => t.classList.remove('active'));
-                    contents.forEach(c => c.classList.remove('active'));
-                    tab.classList.add('active');
+            function switchTab(tabId) {
+                const target = document.getElementById(tabId);
+                const targetLink = document.querySelector(`.tab-link[data-tab="${tabId}"]`);
+
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+
+                if (target && targetLink) {
                     target.classList.add('active');
-                });
+                    targetLink.classList.add('active');
+                }
+            }
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => switchTab(tab.dataset.tab));
             });
 
-            // Summary card button logic
             summaryButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const targetTabLink = document.querySelector(`.tab-link[data-tab="${button.dataset.tab}"]`);
-                    if (targetTabLink) {
-                        targetTabLink.click();
-                    }
-                });
+                button.addEventListener('click', () => switchTab(button.dataset.tab));
             });
 
-            // --- Gemini API Feature Demos ---
-            // NOTE FOR JUDGES: This is a mock client-side function to demonstrate the AI's capabilities.
-            // In the actual application, this is a secure, server-side fetch() call to the Google Gemini API.
-            async function callGeminiAPI(prompt) {
-                // This simulates the network delay of a real API call
-                const delay = 1000 + Math.random() * 500;
+            // Language Switcher
+            const langSwitchBtn = document.getElementById('lang-switch');
+            let currentLang = 'en';
 
+            function updateLanguage(lang) {
+                document.documentElement.lang = lang;
+                document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+                langSwitchBtn.textContent = lang === 'en' ? 'عربي' : 'English';
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    const text = el.dataset[lang] || el.dataset['en'];
+                    el.innerHTML = text; // Use innerHTML to render icons if any
+                });
+                chatbotModal.querySelectorAll('button[data-question]').forEach(button => {
+                    button.textContent = lang === 'ar' ? button.dataset.arText : button.dataset.question.split(' ').slice(0, 2).join(' ');
+                });
+            }
+
+            langSwitchBtn.addEventListener('click', () => {
+                currentLang = currentLang === 'en' ? 'ar' : 'en';
+                updateLanguage(currentLang);
+            });
+
+            // --- Gemini API Mock Logic ---
+            async function callGeminiAPI(prompt, lang) {
+                const delay = 1000 + Math.random() * 500;
                 return new Promise(resolve => {
                     setTimeout(() => {
-                        // Pre-written responses based on the prompt for demonstration purposes.
-                        // The actual app uses a RAG model grounded on verified medical articles.
                         if (prompt.includes("public meltdown")) {
-                            resolve("Of course. When handling a public meltdown, the first step is to ensure the child's safety and try to move to a quieter space. Stay calm and use simple, direct language. Remember to offer comfort and reassurance rather than punishment. It's a sign of being overwhelmed, not misbehavior.");
+                            resolve(lang === 'ar' ? "بالتأكيد. عند التعامل مع نوبة غضب عامة، الخطوة الأولى هي ضمان سلامة الطفل ومحاولة الانتقال إلى مكان أكثر هدوءًا. حافظ على هدوئك واستخدم لغة بسيطة ومباشرة." : "Of course. When handling a public meltdown, the first step is to ensure the child's safety and try to move to a quieter space. Stay calm and use simple, direct language.");
                         } else if (prompt.includes("sensory-friendly activities")) {
-                            resolve("Great question! Sensory-friendly activities can be very beneficial. Consider things like playing with kinetic sand or play-doh, gentle swinging, listening to calming music with headphones, or creating a quiet corner with soft pillows and blankets. The key is to find activities that are calming, not overstimulating.");
-                        } else if (prompt.includes("explain autism to my family")) {
-                            resolve("Explaining autism to family can be challenging but is so important. It can be helpful to frame it as a different way of processing the world. Focus on your child's strengths and unique qualities first. Share reliable resources, like articles or videos, and emphasize that support and understanding make the biggest difference.");
-                        } else if (prompt.includes("write a concise, encouraging, and professional summary")) {
-                            // Logic for the summary generator, simulating AI's ability to synthesize data.
-                            const emotionMatch = prompt.match(/Emotion Recognition: (\d+)/);
-                            const memoryMatch = prompt.match(/Memory Score: (\d+)/);
-                            const socialMatch = prompt.match(/Social Interaction: (\d+)/);
-
-                            const emotion = emotionMatch ? parseInt(emotionMatch[1], 10) : 0;
-                            const memory = memoryMatch ? parseInt(memoryMatch[1], 10) : 0;
-                            const social = socialMatch ? parseInt(socialMatch[1], 10) : 0;
-
-                            let summary = `This week shows wonderful progress. There's been a significant improvement in <strong>Social Interaction</strong> (${social}%), which is fantastic to see. We're also seeing steady gains in <strong>Emotion Recognition</strong> (${emotion}%). `;
-                            if (memory < 65) {
-                                summary += `The main focus for next week will be on <strong>Memory</strong>-related activities (${memory}%). Let's try incorporating some fun, short-term memory games into daily routines. Overall, a very positive week!`;
-                            } else {
-                                summary += `<strong>Memory</strong> skills (${memory}%) are also developing well. Let's continue to build on this momentum. A great suggestion for the coming week is to practice storytelling to link emotions with events. Keep up the amazing work!`;
-                            }
-                            resolve(summary);
-                        } else {
-                            resolve("I'm here to help with questions about supporting a child with autism. Please try one of the example questions!");
+                            resolve(lang === 'ar' ? "سؤال رائع! يمكن أن تكون الأنشطة الصديقة للحواس مفيدة جدًا. فكر في أشياء مثل اللعب بالرمل الحركي أو الاستماع إلى موسيقى هادئة." : "Great question! Sensory-friendly activities can be very beneficial. Consider things like playing with kinetic sand or gentle swinging.");
                         }
                     }, delay);
                 });
             }
 
-            // Chatbot Demo Logic
+            // --- Gemini Demo Modals ---
             const toggleChatbotBtn = document.getElementById('toggle-chatbot-demo');
-            const chatbotInterface = document.getElementById('chatbot-demo');
-            const presetQuestions = chatbotInterface.querySelectorAll('.preset-questions button');
+            const chatbotModal = document.getElementById('chatbot-demo-modal');
+            const closeChatbotModal = document.getElementById('close-chatbot-modal');
             const chatbotResponseEl = document.getElementById('chatbot-response');
 
-            toggleChatbotBtn.addEventListener('click', () => {
-                const isVisible = chatbotInterface.style.display === 'block';
-                chatbotInterface.style.display = isVisible ? 'none' : 'block';
-                toggleChatbotBtn.textContent = isVisible ? 'Hide Demo' : '✨ Try a Live Demo';
-            });
-
-            presetQuestions.forEach(button => {
-                button.addEventListener('click', async () => {
-                    const question = button.dataset.question;
-                    chatbotResponseEl.innerHTML = `<p class="generating-text"><span class="spinner"></span> Gemini is thinking...</p>`;
-                    const response = await callGeminiAPI(question);
-                    chatbotResponseEl.innerHTML = `<p>${response}</p>`;
+            if (toggleChatbotBtn) {
+                toggleChatbotBtn.addEventListener('click', () => chatbotModal.classList.remove('hidden'));
+                closeChatbotModal.addEventListener('click', () => chatbotModal.classList.add('hidden'));
+                chatbotModal.querySelectorAll('button[data-question]').forEach(button => {
+                    button.addEventListener('click', async () => {
+                        const question = button.dataset.question;
+                        chatbotResponseEl.innerHTML = `<p class="generating-text"><span class="spinner"></span> ${currentLang === 'ar' ? 'يفكر Gemini...' : 'Gemini is thinking...'}</p>`;
+                        const response = await callGeminiAPI(question, currentLang);
+                        chatbotResponseEl.innerHTML = `<p>${response}</p>`;
+                    });
                 });
-            });
-
-
-            // Summary Generator Demo Logic
-            const toggleSummaryBtn = document.getElementById('toggle-summary-demo');
-            const summaryInterface = document.getElementById('summary-demo');
-            const generateSummaryBtn = document.getElementById('generate-summary-btn');
-            const summaryOutputEl = document.getElementById('summary-output');
-
-            toggleSummaryBtn.addEventListener('click', () => {
-                const isVisible = summaryInterface.style.display === 'block';
-                summaryInterface.style.display = isVisible ? 'none' : 'block';
-                toggleSummaryBtn.textContent = isVisible ? 'Hide Generator' : '✨ See AI Summary Generator';
-            });
-
-            generateSummaryBtn.addEventListener('click', async () => {
-                const emotion = document.getElementById('emotion-slider').value;
-                const memory = document.getElementById('memory-slider').value;
-                const social = document.getElementById('social-slider').value;
-
-                summaryOutputEl.innerHTML = `<p class="generating-text"><span class="spinner"></span> Gemini is generating the report...</p>`;
-
-                const prompt = `You are a helpful AI assistant for therapists. Based on the following weekly progress data for a child with autism, write a concise, encouraging, and professional summary for their parents. Data: Emotion Recognition: ${emotion}, Memory Score: ${memory}, Social Interaction: ${social}. Focus on positive reinforcement and suggest one small activity for the upcoming week.`;
-
-                const summary = await callGeminiAPI(prompt);
-                summaryOutputEl.innerHTML = `<p>${summary}</p>`;
-            });
+            }
         });
     </script>
 
