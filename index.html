@@ -291,12 +291,8 @@
         class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm transition-all duration-300">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="#" class="flex items-center space-x-2">
-                <!-- Autism Puzzle Logo SVG -->
-                <svg class="h-8 w-8 text-primary-blue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                    fill="currentColor">
-                    <path
-                        d="M17.5 2.5C15.57 2.5 14 4.07 14 6V10H10V6C10 4.07 8.43 2.5 6.5 2.5S3 4.07 3 6V10C3 11.93 4.57 13.5 6.5 13.5S10 11.93 10 10V8H14V10C14 11.93 15.57 13.5 17.5 13.5S21 11.93 21 10V6C21 4.07 19.43 2.5 17.5 2.5ZM6.5 17.5C4.57 17.5 3 19.07 3 21V22H10V21C10 19.07 8.43 17.5 6.5 17.5ZM17.5 17.5C15.57 17.5 14 19.07 14 21V22H21V21C21 19.07 19.43 17.5 17.5 17.5Z" />
-                </svg>
+                <img src="logo2.png" srcset="logo2.png 2x" alt="BrAIn Light logo" class="h-8 w-8 object-contain"
+                    loading="lazy" decoding="async">
                 <h1 class="text-2xl font-bold font-heading">Br<span class="text-primary-blue">AI</span>n Light</h1>
             </a>
             <div class="flex items-center space-x-4">
@@ -370,11 +366,12 @@
                             & Engineering</p>
                     </div>
                     <div class="bg-card-bg p-8 rounded-2xl shadow-lg border border-border-light">
-                        <div class="text-5xl text-primary-yellow mb-4">🚀</div>
+                        <img src="nexus-logo.png" srcset="nexus-logo.png 2x" alt="Nexus Logo"
+                            class="h-16 w-16 mb-4 mx-auto object-contain" loading="lazy" decoding="async">
                         <h3 class="font-heading font-bold text-xl" data-en="Grand Finalist"
                             data-ar="المتأهل النهائي الكبير">Grand Finalist</h3>
-                        <p class="text-sm text-text-body" data-en="Top 100 Teams, Final Stage"
-                            data-ar="أفضل 100 فريق، المرحلة النهائية">Final Stage</p>
+                        <p class="text-sm text-text-body" data-en="Top Teams, Final Stage"
+                            data-ar="أفضل فرق، المرحلة النهائية">Final Stage</p>
                     </div>
                 </div>
             </div>
@@ -635,43 +632,52 @@
                     data-ar="جرب كيف يحول اندماج الذكاء الاصطناعي والواقع المعزز العلاج إلى لعب ممتع.">Experience how
                     our fusion of AI and AR turns therapy into engaging play.</p>
             </div>
-            <div class="max-w-4xl mx-auto bg-card-bg p-2 md:p-4 rounded-2xl shadow-2xl border border-border-light">
-                <div class="aspect-w-16 aspect-h-9">
-                    <!-- EDIT ME: Replace the src below with your YouTube video's "embed" link. -->
-                    <iframe class="rounded-lg" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                        title="BrAIn Light Project Demo"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+            <div class="w-screen -mx-6 md:mx-auto md:w-full">
+                <div
+                    class="mx-auto bg-card-bg p-0 rounded-none shadow-none border-0 md:max-w-lg md:p-4 md:rounded-2xl md:shadow-2xl md:border md:border-border-light">
+                    <div class="relative w-full" style="aspect-ratio: 9 / 16;">
+                        <!-- Vertical mobile video: full-bleed on mobile, nicer card on larger screens -->
+                        <iframe class="absolute inset-0 w-full h-full rounded-none md:rounded-lg"
+                            src="https://www.youtube.com/embed/WQ_8Ojcqdx0?si=7-8ihng8pCmlbseX"
+                            title="YouTube video player" loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
                 </div>
+            </div>
             </div>
             <div class="text-center mt-8">
                 <!-- EDIT ME: Replace '#' with the direct link to your full demo video. -->
-                <a href="#" class="btn-primary"><i class="fas fa-external-link-alt"></i> <span
-                        data-en="Watch Full Demo on YouTube" data-ar="شاهد العرض الكامل على يوتيوب">Watch Full Demo on
+                <a href="https://youtube.com/shorts/0Y5S0Y3VX5A?feature=share" class="btn-primary"><i
+                        class="fas fa-external-link-alt"></i> <span data-en="Watch Full Demo on YouTube"
+                        data-ar="شاهد العرض الكامل على يوتيوب">Watch Full Demo on
                         YouTube</span></a>
             </div>
 
             <div class="mt-16">
                 <h3 class="text-2xl font-bold text-center mb-8" data-en="Related Awareness Videos"
                     data-ar="فيديوهات توعوية ذات صلة">Related Awareness Videos</h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- EDIT ME: Add links and titles for other awareness videos -->
-                    <div class="bg-card-bg p-4 rounded-xl shadow-lg border border-border-light">
-                        <div class="aspect-w-16 aspect-h-9">
-                            <iframe width="560" height="315"
+
+                <!-- stacked cards, slightly narrower width and taller videos -->
+                <div class="space-y-8">
+                    <div class="bg-card-bg p-4 rounded-xl shadow-lg border border-border-light max-w-xl mx-auto">
+                        <div class="w-full">
+                            <iframe class="w-full h-96 rounded-lg"
                                 src="https://www.youtube.com/embed/y4vurv9usYA?si=PBBljn1Jemx6DyNS"
-                                title="YouTube video player" frameborder="0"
+                                title="YouTube video player"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                         <p class="font-semibold text-text-dark mt-3" data-en="What it's really like to have autism"
                             data-ar="ما يشبه حقًا أن تكون مصابًا بالتوحد">What it's really like to have autism</p>
                     </div>
-                    <div class="bg-card-bg p-4 rounded-xl shadow-lg border border-border-light">
-                        <div class="aspect-w-16 aspect-h-9">
-                            <iframe width="560" height="315"
+
+                    <div class="bg-card-bg p-4 rounded-xl shadow-lg border border-border-light max-w-xl mx-auto">
+                        <div class="w-full">
+                            <iframe class="w-full h-96 rounded-lg"
                                 src="https://www.youtube.com/embed/NEy6Oj8dmCc?si=vAOhXBw5aan67vi-"
-                                title="YouTube video player" frameborder="0"
+                                title="YouTube video player"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
@@ -679,6 +685,8 @@
                         </p>
                     </div>
                 </div>
+            </div>
+            </div>
             </div>
         </section>
         <!-- Research Section -->
@@ -715,23 +723,97 @@
                     Key Research Resources</h3>
                 <div class="space-y-3">
                     <!-- EDIT ME: Replace '#' with actual links to papers and update titles -->
-                    <a href="#" target="_blank"
+                    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10817661/" target="_blank"
                         class="flex items-center gap-3 text-primary-blue hover:text-dark-blue"><i
                             class="fas fa-file-alt"></i> <span data-en="AI in Autism Therapy: A Review"
                             data-ar="الذكاء الاصطناعي في علاج التوحد: مراجعة">AI in Autism Therapy: A Review</span></a>
-                    <a href="#" target="_blank"
+                    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7504463/" target="_blank"
                         class="flex items-center gap-3 text-primary-blue hover:text-dark-blue"><i
                             class="fas fa-file-alt"></i> <span data-en="Effectiveness of AR for Social Skills"
                             data-ar="فعالية الواقع المعزز للمهارات الاجتماعية">Effectiveness of AR for Social
                             Skills</span></a>
                 </div>
+
                 <div class="text-center mt-12">
-                    <!-- EDIT ME: Replace '#' with the link to your full resources document/folder. -->
-                    <a href="#" class="btn-primary"><i class="fas fa-folder-open"></i> <span
-                            data-en="View Full Resources & Validation" data-ar="عرض جميع المصادر والتحقق">View Full
-                            Resources &
-                            Validation</span></a>
+                    <h3 class="font-heading font-bold text-2xl mb-6" data-en="Expert Validation"
+                        data-ar="التحقق من الخبراء">Expert Validation</h3>
+
+                    <p class="text-sm text-text-body mb-6 max-w-2xl mx-auto"
+                        data-en="We reached out to experienced clinicians and autism specialists who reviewed prototypes, tested workflows, and validated our design and outcome measures."
+                        data-ar="تواصلنا مع أطباء ومختصين في التوحد ذوي خبرة لمراجعة النماذج الأولية، اختبار تسلسل العمل، والتحقق من التصميم ومقاييس النتائج.">
+                        We reached out to experienced clinicians and autism specialists who reviewed prototypes, tested
+                        workflows, and validated our design and outcome measures.
+                    </p>
+
+
+                    <div class="bg-card-bg p-6 rounded-2xl shadow-lg border border-border-light text-left">
+                        <div class="flex items-center gap-4">
+                            <img src="https://placehold.co/64x64/007BFF/FFFFFF?text=Dr" alt="Dr. H"
+                                class="w-16 h-16 rounded-full object-cover border-2 border-white shadow-sm">
+                            <div>
+                                <div class="font-bold" data-en="Dr. Hassan Abdo" data-ar="د. حسان عبده">Dr. Hassan Abdo
+                                </div>
+                                <div class="text-sm text-primary-blue"
+                                    data-en="ٌMental Disorders Specialist at Right to live Organization"
+                                    data-ar="مسؤول في جمعية الحق في الحياة للاضطرابات النفسية">ُMental Disorders
+                                    Specialist at Right to live Organization</div>
+                                <div class="text-sm text-text-body mt-2" data-en="Right to Live Organization, Cairo"
+                                    data-ar="جمعية الحق في الحياة، القاهرة">Right to Live Organization, Cairo</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-text-body mt-4"
+                            data-en="Pilot-tested the emotion-detection scenarios with small cohorts."
+                            data-ar="اختبرت سيناريوهات كشف المشاعر في تجارب مبدئية مع مجموعات صغيرة.">Validated AI use
+                            and suggested useful features and games</p>
+
+                    </div>
+
+                    <div class="bg-card-bg p-6 rounded-2xl shadow-lg border border-border-light text-left">
+                        <div class="flex items-center gap-4">
+                            <img src="https://placehold.co/64x64/007BFF/FFFFFF?text=Dr" alt="Dr. D"
+                                class="w-16 h-16 rounded-full object-cover border-2 border-white shadow-sm">
+                            <div>
+                                <div class="font-bold" data-en="Dr. Yousry Ahmed Elezaby" data-ar="د. يسري احمد العزبي">
+                                    Dr. Yousry Ahmed Elezaby</div>
+                                <div class="text-sm text-primary-blue" data-en="Consultant of Neurology at National InS"
+                                    data-ar="استشاري مخ و أعصاب بالمعهد القومي">Consultant of Neurology at National InS
+                                </div>
+                                <div class="text-sm text-text-body mt-2" data-en="National Institution"
+                                    data-ar="المهد القومي">National Institution</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-text-body mt-4" data-en="Reviewed AI solutions applied."
+                            data-ar="راجع الحلول المقترحة.">Reviewed AI solutions applied.</p>
+
+                        <!-- Vezeeta profile button -->
+                        <div class="mt-4">
+                            <a href="https://www.vezeeta.com/en/dr/doctor-yousry-ahmed-elezaby-neurology"
+                                target="_blank" rel="noopener noreferrer"
+                                class="btn-secondary inline-flex items-center gap-2"
+                                aria-label="Vezeeta profile (Dr. Yousry)">
+                                <i class="fas fa-user-md"></i>
+                                <span data-en="Vezeeta Profile" data-ar="الملف على فيزيتا">Vezeeta Profile</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
+
+                <p class="text-xs text-text-body mt-6"
+                    data-en="Names and roles listed with permission; public affiliation links provided where available."
+                    data-ar="الأسماء والأدوار مدرجة بموافقة؛ روابط المؤسسات العامة مرفقة حيثما توفرت.">Names and
+                    roles listed with permission; public affiliation links provided where available.</p>
+            </div>
+            </div>
+
+            <!-- EDIT ME: Replace '#' with the link to your full resources document/folder. -->
+            <div class="flex justify-center mt-8">
+                <a href="https://docs.google.com/document/d/1CgLioIo6sfQL-nFQsUhgwTo1jykHN1i35wdXhfN08kA/edit?usp=sharing"
+                    class="btn-primary inline-flex items-center px-6 py-3 rounded-full shadow-lg hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary-blue/20"
+                    target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-folder-open mr-3"></i>
+                    <span data-en="View Full Resources & Validation" data-ar="عرض جميع المصادر والتحقق">View Full
+                        Resources & Validation</span>
+                </a>
             </div>
         </section>
 
@@ -802,6 +884,34 @@
                     data-ar="فريق متخصص من 6 طلاب ذكاء اصطناعي من كلية الحاسبات والذكاء الاصطناعي بجامعة القاهرة.">A
                     dedicated team of 6 AI students from the Faculty of Computing & AI, Cairo University.</p>
             </div>
+
+            <!-- Supervisor Highlight -->
+            <div class="max-w-3xl mx-auto mb-10">
+                <div
+                    class="bg-card-bg p-6 rounded-2xl shadow-lg border border-border-light flex flex-col md:flex-row items-center gap-6">
+                    <img src="https://placehold.co/128x128/007BFF/FFFFFF?text=Dr" alt="Dr. Asmaa"
+                        class="w-28 h-28 rounded-full object-cover border-4 border-white shadow-lg">
+                    <div class="text-center md:text-left">
+                        <h4 class="mt-2 font-bold font-heading" data-en="Dr. Asmaa" data-ar="د. أسماء">Dr. Asmaa</h4>
+                        <p class="text-sm text-primary-blue font-medium" data-en="Supervisor" data-ar="المشرفة">
+                            Supervisor</p>
+                        <p class="text-sm text-text-body mt-2 max-w-xl"
+                            data-en="Supervising professor from the Faculty of Computing & AI, providing guidance and academic oversight for the BrAIn Light project."
+                            data-ar="أستاذة مشرفة من كلية الحاسبات والذكاء الاصطناعي توفر التوجيه والإشراف الأكاديمي لمشروع BrAIn Light.">
+                            Supervising professor from the Faculty of Computing & AI, providing guidance and academic
+                            oversight for the BrAIn Light project.
+                        </p>
+                        <div class="flex justify-center md:justify-start gap-4 mt-3">
+                            <a href="https://www.linkedin.com/in/asmaa-a-osman"
+                                class="text-gray-400 hover:text-primary-blue" aria-label="LinkedIn (Dr. Asmaa)"><i
+                                    class="fab fa-linkedin fa-lg"></i></a>
+                            <a href="mailto:asmaa.a.elsayed@fci-cu.edu.eg" class="text-gray-400 hover:text-primary-blue"
+                                aria-label="Email (Dr. Asmaa)"><i class="fas fa-envelope fa-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- EDIT ME: Update details for each team member. Add your real links. -->
                 <div
@@ -812,13 +922,13 @@
                     <p class="text-sm text-primary-blue font-medium" data-en="Team Lead" data-ar="قائد الفريق">Team Lead
                     </p>
                     <div class="flex justify-center gap-4 mt-3">
-                        <a href="#" class="text-gray-400 hover:text-primary-blue"><i
-                                class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="https://www.linkedin.com/in/moaz-gehad"
+                            class="text-gray-400 hover:text-primary-blue"><i class="fab fa-linkedin fa-lg"></i></a>
                         <a href="mailto:moazgehad1@gmail.com" class="text-gray-400 hover:text-primary-blue"><i
                                 class="fas fa-envelope fa-lg"></i></a>
                     </div>
                     <!-- <a href="#" class="mt-4 btn-secondary w-full text-sm"><span data-en="View CV"
-                            data-ar="عرض السيرة الذاتية">View CV</span></a> -->
+                    data-ar="عرض السيرة الذاتية">View CV</span></a> -->
                 </div>
                 <!-- Repeat for other members -->
                 <div
@@ -826,32 +936,33 @@
                     <img src="https://placehold.co/128x128/007BFF/FFFFFF?text=R" alt="Rana"
                         class="w-32 h-32 rounded-full object-cover mx-auto border-4 border-white shadow-lg group-hover:scale-105 transition-transform">
                     <h4 class="mt-4 font-bold font-heading">Rana</h4>
-                    <p class="text-sm text-primary-blue font-medium" data-en="Lead AI Dev"
-                        data-ar="مهندس ذكاء اصطناعي ">Lead AI Dev</p>
+                    <p class="text-sm text-primary-blue font-medium" data-en="AI Tech Lead"
+                        data-ar="مهندسة ذكاء اصطناعي ">AI Tech Lead</p>
                     <div class="flex justify-center gap-4 mt-3">
-                        <a href="#" class="text-gray-400 hover:text-primary-blue"><i
+                        <a href="https://www.linkedin.com/in/ranahelal" class="text-gray-400 hover:text-primary-blue"><i
                                 class="fab fa-linkedin fa-lg"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-primary-blue"><i
+                        <a href="mailto:ranaesmailhelal@gmail.com" class="text-gray-400 hover:text-primary-blue"><i
                                 class="fas fa-envelope fa-lg"></i></a>
                     </div>
                     <!-- <a href="#" class="mt-4 btn-secondary w-full text-sm"><span data-en="View CV"
-                            data-ar="عرض السيرة الذاتية">View CV</span></a> -->
+                    data-ar="عرض السيرة الذاتية">View CV</span></a> -->
                 </div>
                 <div
                     class="team-member group bg-card-bg p-6 rounded-2xl shadow-lg border border-border-light text-center">
                     <img src="https://placehold.co/128x128/007BFF/FFFFFF?text=N" alt="Nadine"
                         class="w-32 h-32 rounded-full object-cover mx-auto border-4 border-white shadow-lg group-hover:scale-105 transition-transform">
                     <h4 class="mt-4 font-bold font-heading">Nadine</h4>
-                    <p class="text-sm text-primary-blue font-medium" data-en="Flutter Dev" data-ar="مطور فلاتر">Flutter
-                        Dev</p>
+                    <p class="text-sm text-primary-blue font-medium" data-en="Flutter & Research" data-ar=" مطور فلاتر">
+                        Flutter
+                        & Research</p>
                     <div class="flex justify-center gap-4 mt-3">
-                        <a href="#" class="text-gray-400 hover:text-primary-blue"><i
-                                class="fab fa-linkedin fa-lg"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-primary-blue"><i
+                        <a href="https://www.linkedin.com/in/nadine-hazem-748b88264/"
+                            class="text-gray-400 hover:text-primary-blue"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="mailto:Nadinehazem399@gmail.com" class="text-gray-400 hover:text-primary-blue"><i
                                 class="fas fa-envelope fa-lg"></i></a>
                     </div>
                     <!-- <a href="#" class="mt-4 btn-secondary w-full text-sm"><span data-en="View CV"
-                            data-ar="عرض السيرة الذاتية">View CV</span></a> -->
+                    data-ar="عرض السيرة الذاتية">View CV</span></a> -->
                 </div>
                 <div
                     class="team-member group bg-card-bg p-6 rounded-2xl shadow-lg border border-border-light text-center">
@@ -861,45 +972,45 @@
                     <p class="text-sm text-primary-blue font-medium" data-en="AR Developer" data-ar="مطور واقع معزز">AR
                         Developer</p>
                     <div class="flex justify-center gap-4 mt-3">
-                        <a href="#" class="text-gray-400 hover:text-primary-blue"><i
-                                class="fab fa-linkedin fa-lg"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-primary-blue"><i
+                        <a href="https://www.linkedin.com/in/abdelrahman-elhamouly"
+                            class="text-gray-400 hover:text-primary-blue"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="mailto:abdelrahmanelhamouly@gmail.com" class="text-gray-400 hover:text-primary-blue"><i
                                 class="fas fa-envelope fa-lg"></i></a>
                     </div>
                     <!-- <a href="#" class="mt-4 btn-secondary w-full text-sm"><span data-en="View CV"
-                            data-ar="عرض السيرة الذاتية">View CV</span></a> -->
+                    data-ar="عرض السيرة الذاتية">View CV</span></a> -->
                 </div>
                 <div
                     class="team-member group bg-card-bg p-6 rounded-2xl shadow-lg border border-border-light text-center">
                     <img src="https://placehold.co/128x128/007BFF/FFFFFF?text=Mh" alt="Mahmoud"
                         class="w-32 h-32 rounded-full object-cover mx-auto border-4 border-white shadow-lg group-hover:scale-105 transition-transform">
                     <h4 class="mt-4 font-bold font-heading">Mahmoud</h4>
-                    <p class="text-sm text-primary-blue font-medium" data-en="Data & Validation"
-                        data-ar="البيانات والتحقق">Data & Validation</p>
+                    <p class="text-sm text-primary-blue font-medium" data-en="Data & ML"
+                        data-ar="البيانات و تعلم الالة">ML & Data</p>
                     <div class="flex justify-center gap-4 mt-3">
-                        <a href="#" class="text-gray-400 hover:text-primary-blue"><i
-                                class="fab fa-linkedin fa-lg"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-primary-blue"><i
+                        <a href="https://www.linkedin.com/in/mahmoud-elharty-851656265/"
+                            class="text-gray-400 hover:text-primary-blue"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="mailto:Elhartym972@gmail.com" class="text-gray-400 hover:text-primary-blue"><i
                                 class="fas fa-envelope fa-lg"></i></a>
                     </div>
                     <!-- <a href="#" class="mt-4 btn-secondary w-full text-sm"><span data-en="View CV"
-                            data-ar="عرض السيرة الذاتية">View CV</span></a> -->
+                    data-ar="عرض السيرة الذاتية">View CV</span></a> -->
                 </div>
                 <div
                     class="team-member group bg-card-bg p-6 rounded-2xl shadow-lg border border-border-light text-center">
                     <img src="https://placehold.co/128x128/007BFF/FFFFFF?text=Mn" alt="Menna"
                         class="w-32 h-32 rounded-full object-cover mx-auto border-4 border-white shadow-lg group-hover:scale-105 transition-transform">
                     <h4 class="mt-4 font-bold font-heading">Menna</h4>
-                    <p class="text-sm text-primary-blue font-medium" data-en="UX/UI & Research" data-ar="تصميم وبحث">
-                        UX/UI & Research</p>
+                    <p class="text-sm text-primary-blue font-medium" data-en="UX/UI & Flutter" data-ar="تصميم و موبايل">
+                        UX/UI & Flutter</p>
                     <div class="flex justify-center gap-4 mt-3">
-                        <a href="#" class="text-gray-400 hover:text-primary-blue"><i
-                                class="fab fa-linkedin fa-lg"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-primary-blue"><i
+                        <a href="https://www.linkedin.com/in/menna-hany-541761261/"
+                            class="text-gray-400 hover:text-primary-blue"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="mailto:Menna.hany99.11@gmail.com" class="text-gray-400 hover:text-primary-blue"><i
                                 class="fas fa-envelope fa-lg"></i></a>
                     </div>
                     <!-- <a href="#" class="mt-4 btn-secondary w-full text-sm"><span data-en="View CV"
-                            data-ar="عرض السيرة الذاتية">View CV</span></a> -->
+                    data-ar="عرض السيرة الذاتية">View CV</span></a> -->
                 </div>
                 <div style="text-align: center; margin-top: 2rem;">
                     <!-- EDIT ME: Replace '#' with the link to your team's CVs (e.g., a Google Drive folder). -->
@@ -929,7 +1040,7 @@
             </div>
             <div class="max-w-2xl mx-auto bg-card-bg p-8 rounded-2xl shadow-lg border border-border-light text-center">
                 <h3 class="font-heading font-bold text-xl mb-2" data-en="Contact the Team Lead"
-                    data-ar="تواصل مع قائد الفريق">Contact the Team Lead</h3>
+                    data-ar="تواصل مع قائد الفريق">Contact the Team </h3>
                 <p class="text-text-body mb-4" data-en="For direct inquiries:" data-ar="للاستفسارات المباشرة:">For
                     direct inquiries:</p>
 
@@ -946,8 +1057,7 @@
         <div class="container mx-auto px-6 text-center">
             <div class="flex justify-center items-center space-x-6 mb-6">
                 <!-- EDIT ME: Replace '#' with your project's social media links. -->
-                <a href="#" class="text-gray-400 hover:text-white transition" aria-label="LinkedIn"><i
-                        class="fab fa-linkedin fa-lg"></i></a>
+
                 <a href="https://github.com/ranaehelal/brainlight-app" class="text-gray-400 hover:text-white transition"
                     aria-label="GitHub"><i class="fab fa-github fa-lg"></i></a>
             </div>
