@@ -1046,7 +1046,6 @@
                     <!-- FormSubmit options -->
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_subject" value="New inquiry from BrAIn Light website">
 
                     <div>
                         <label for="name" class="block text-sm font-medium mb-1">
@@ -1070,7 +1069,8 @@
                         <label for="subject" class="block text-sm font-medium mb-1">
                             <span data-en="Subject" data-ar="الموضوع">Subject</span>
                         </label>
-                        <input id="subject" name="subject" type="text" required
+                        <!-- Use _subject so FormSubmit uses the user's subject directly -->
+                        <input id="subject" name="_subject" type="text" required
                             class="w-full border border-border-light rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200"
                             placeholder="Inquiry about BrAIn Light">
                     </div>
@@ -1126,12 +1126,12 @@
 
                         const payload = {
                             name: form.name.value.trim(),
-                            email: form.email.value.trim(),
-                            subject: form.subject.value.trim(),
+                            email: form.email.value.trim(),      // used as Reply-To
+                            _replyto: form.email.value.trim(),   // ensure Reply-To is set
+                            _subject: form._subject.value.trim(),// use user's subject as email subject
                             message: form.message.value.trim(),
                             _captcha: 'false',
-                            _template: 'table',
-                            _subject: 'New inquiry from BrAIn Light website'
+                            _template: 'table'
                         };
 
                         // UI: loading state
@@ -1296,3 +1296,4 @@
 </body>
 
 </html>
+
